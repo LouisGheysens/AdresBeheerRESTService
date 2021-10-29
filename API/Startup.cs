@@ -10,9 +10,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DataLayer;
+using BusinessLayer.Interfaces;
+using DataLayer.Repos;
+using BusinessLayer.Services;
 
 namespace API {
     public class Startup {
+        private string connectionstring = @"Data Source=DESKTOP-3CJB43N\SQLEXPRESS;Initial Catalog=AdresBeheerRestService;Integrated Security=True";
         public Startup(IConfiguration configuration) {
             Configuration = configuration;
         }
@@ -23,6 +28,10 @@ namespace API {
         public void ConfigureServices(IServiceCollection services) {
 
             services.AddControllers();
+            services.AddSingleton<IGemeenteRepository>(x => new GemeenteRepositoryADO(connectionstring));
+            services.AddSingleton<IStraatRepository>(x => new StraatRepositoryADO(connectionstring));
+            services.AddSingleton<GemeenteService>();
+            services.AddSingleton<StraatService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });

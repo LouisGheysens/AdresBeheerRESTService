@@ -16,7 +16,7 @@ namespace BusinessLayer.Model {
         }
 
         public void ZetGemeentenaam(string gemeentenaam) {
-            if(((string.IsNullOrWhiteSpace(GemeenteNaam)) || (!char.IsUpper(GemeenteNaam[0])))) {
+            if(((string.IsNullOrWhiteSpace(gemeentenaam)) || (!char.IsUpper(gemeentenaam[0])))) {
                 GemeenteException ex = new GemeenteException("Naam niet correct");
                 //Doe steeds de ex.Data.add = zo kan je makkeljker fouten opsporen!
                 ex.Data.Add("Gemeentenaam", gemeentenaam);

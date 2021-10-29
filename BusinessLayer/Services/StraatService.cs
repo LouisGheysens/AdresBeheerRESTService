@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 namespace BusinessLayer.Services {
     public class StraatService {
         private IStraatRepository repo;
+
+        public StraatService(IStraatRepository repo) {
+            this.repo = repo;
+        }
         public List<Straat> GeefstratenInGemeente(int gemeenteId) {
             try {
                 return repo.GeefstratenInGemeente(gemeenteId);

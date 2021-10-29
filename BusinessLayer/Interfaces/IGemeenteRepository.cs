@@ -8,5 +8,7 @@ using System.Threading.Tasks;
 namespace BusinessLayer.Interfaces {
     public interface IGemeenteRepository {
         Gemeente GeefGemeente(int id);
+        bool HeeftGemeente(int NISCode);
+        void VoegGemeenteToe(Gemeente gemeente);
     }
 }

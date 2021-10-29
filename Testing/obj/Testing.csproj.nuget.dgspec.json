@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eigenaar\\Source\\Repos\\LouisGheysens\\AdresBeheerRestService\\Testing\\Testing.csproj": {}
+    "C:\\Users\\Eigenaar\\AdresBeheerRESTService\\Testing\\Testing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eigenaar\\Source\\Repos\\LouisGheysens\\AdresBeheerRestService\\Testing\\Testing.csproj": {
+    "C:\\Users\\Eigenaar\\AdresBeheerRESTService\\Testing\\Testing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eigenaar\\Source\\Repos\\LouisGheysens\\AdresBeheerRestService\\Testing\\Testing.csproj",
+        "projectUniqueName": "C:\\Users\\Eigenaar\\AdresBeheerRESTService\\Testing\\Testing.csproj",
         "projectName": "Testing",
-        "projectPath": "C:\\Users\\Eigenaar\\Source\\Repos\\LouisGheysens\\AdresBeheerRestService\\Testing\\Testing.csproj",
+        "projectPath": "C:\\Users\\Eigenaar\\AdresBeheerRESTService\\Testing\\Testing.csproj",
         "packagesPath": "C:\\Users\\Eigenaar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eigenaar\\Source\\Repos\\LouisGheysens\\AdresBeheerRestService\\Testing\\obj\\",
+        "outputPath": "C:\\Users\\Eigenaar\\AdresBeheerRESTService\\Testing\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

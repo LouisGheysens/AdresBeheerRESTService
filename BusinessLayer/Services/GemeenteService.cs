@@ -13,11 +13,26 @@ namespace BusinessLayer.Services {
     /// </summary>
     public class GemeenteService {
         private IGemeenteRepository repo;
+
+        public GemeenteService(IGemeenteRepository repo) {
+            this.repo = repo;
+        }
         public Gemeente GeefGemeente(int id) {
             try {
                 return repo.GeefGemeente(id);
             }catch(Exception ex) {
                 throw new GemeenteServiceException("GeefGemeente", ex);
+            }
+        }
+
+        public Gemeente VoegGemeenteToe(Gemeente gemeente) {
+            try {
+                if (gemeente == null) throw new GemeenteServiceException("VoegGemeenteToe - gemeente is null");
+                if (repo.HeeftGemeente(gemeente.NIScode)) throw new GemeenteServiceException("VoegGemeenteToe - Gemeente bestaat niet!");
+                repo.VoegGemeenteToe(gemeente);
+                return gemeente;
+            }catch(Exception ex) {
+                throw new GemeenteServiceException("VoegGemeenteToe", ex);
             }
         }
     }
