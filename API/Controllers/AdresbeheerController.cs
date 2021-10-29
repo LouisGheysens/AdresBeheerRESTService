@@ -1,4 +1,5 @@
 ﻿using API.Mappers;
+using API.Model.input;
 using API.Model.output;
 using BusinessLayer.Model;
 using BusinessLayer.Services;
@@ -28,11 +29,22 @@ namespace API.Controllers {
                 //Gemeente object opvragen aan de businesslaag
                 Gemeente gemeente = gemeenteService.GeefGemeente(id);
                 return Ok(MapfromDomain.MapFromGemeenteDomain(url, gemeente, straatService));
-            }catch(Exception ex) {
+            } catch (Exception ex) {
                 return NotFound(ex.Message);
             }
         }
         #endregion
+
+        [HttpPost]
+        public ActionResult<GemeenteRESToutputDTO> PostGemeente([FromBody] GemeenteRESTinputDTO restDTO) {
+            try {
+                Gemeente gem = gemeenteService.VoegGemeenteToe(MapToDomain.MapToGemeenteDomain(restDTO));
+                return CreatedAtAction(nameof(GetGemeente), new { id = gem.NIScode },
+                    MapfromDomain.MapFromGemeenteDomain(url, gem, straatService));
+            }catch(Exception ex) {
+                return BadRequest(ex.Message);
+            }
+        }
         #region Straat
         #endregion
         #region Adres
